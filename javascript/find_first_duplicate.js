@@ -1,5 +1,20 @@
 function findFirstDuplicate(arr) {
-  // type your code here
+  // Initialize an empty set 
+  const seen = new Set();
+  
+  // Loop through the array
+  for (let num of arr) {
+    // Check if the set already has the number
+    if (seen.has(num)) {
+      // Return number if a duplicate
+      return num;
+    }
+    // Add number to set if not a duplicate
+    seen.add(num);
+  }
+  
+  // Return -1 if no duplicates 
+  return -1;
 }
 
 if (require.main === module) {
@@ -14,6 +29,3 @@ if (require.main === module) {
 }
 
 module.exports = findFirstDuplicate;
-
-// Please add your pseudocode to this file
-// And a written explanation of your solution
